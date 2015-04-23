@@ -10,13 +10,19 @@
 
 <body> 
 	
-	<div class="main-body">
+	<div class="main-body" ng-app="F1FeederApp" ng-controller="driversController">
 
 		<h1>Loading Ajax</h1>
 		
 		<!-- The ng-app directive is responsible for bootstrapping your app defining its scope -->
 		<!-- The ng-controller directive defines which controller will be in charge of your view -->
-		<table ng-app="F1FeederApp" ng-controller="driversController">
+		<table>
+		
+			<!-- 
+			ng-model binds our text field to the $scope.nameFilter variable and 
+			makes sure that its value is always up-to-date with the input value 
+			-->
+			<input type="text" ng-model="nameFilter" placeholder="Search..."/>
 		
 			<thead>
 				<tr><th colspan="4">Drivers Championship Standings</th></tr>
@@ -25,7 +31,7 @@
 			<tbody>
 			
 				<!-- ng-repeat replicates a line in the table for each driver in driversList -->
-				<tr ng-repeat="driver in driversList">
+				<tr ng-repeat="driver in driversList | filter: nameFilter">
 					<td>
 						{{$index + 1}}
 					</td>

@@ -55,6 +55,7 @@ angular.module('F1FeederApp.services', []).
 	}
 	
 	return ergastAPI;
+	
 	});
 
 // initialize our app and register the modules on which it depends
