@@ -1,22 +1,37 @@
 // Controllers
 
-// The ng-controller directive defines which controller will be in charge of your view. In this case, we denote the driversController, which will provide our list of drivers (driversList).
-
 angular.module('F1FeederApp.controllers', []).
 	
-	/* Drivers controller */
+	// When a Controller is attached to the DOM via the ng-controller directive, Angular will instantiate a new Controller object, using the specified
+	// Controller's constructor function
+	// $scope variable is supposed to link your controller and views, it holds all the data that will be used within your template.
+	// Also passing in the ergastAPIservice function
 	controller('driversController', function($scope, ergastAPIservice) {
 	
+		// reset the nameFilter as only needed on search
 		$scope.nameFilter = null;
+		
+		// Create array for the driversList
 		$scope.driversList = [];
+		
+		// driver passes in the drivers objects
+		// This is called from filter: searchFilter in the ng-repeat
 		$scope.searchFilter = function (driver) {
+			
+			// Returns a regExp, eg "vet" search would return /vet/i
 			var re = new RegExp($scope.nameFilter, 'i');
+			
+			// test - Tests for a match in a string. Returns true or false
 			return !$scope.nameFilter || re.test(driver.Driver.givenName) || re.test(driver.Driver.familyName);
+			
 		};
 	
+		// Calls the stored driver function
 		ergastAPIservice.getDrivers().success(function (response) {
+		
 			//Digging into the response to get the relevant data
 			$scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+			
 		});
 		
 	}).
