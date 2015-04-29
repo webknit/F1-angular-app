@@ -3,40 +3,16 @@ angular.module('F1FeederApp.controllers', []).
 	
 		$scope.nameFilter = null;
 		$scope.driversList = [];
+		
+		$scope.searchFilter = function (driver) {
+			var keyword = new RegExp($scope.nameFilter, 'i');
+			return !$scope.nameFilter || keyword.test(driver.Driver.givenName) || keyword.test(driver.Driver.familyName);
+		};
 	
 		ergastAPIservice.getDrivers().success(function (response) {
 			//Dig into the responde to get the relevant data
 			$scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 		});
-	
-		// The $scope variable is supposed to link your controller and views
-		// it holds all the data that will be used within your template
-	    /*
-			$scope.driversList = [
-		      {
-		          Driver: {
-		              givenName: 'Sebastian',
-		              familyName: 'Vettel'
-		          },
-		          points: 322,
-		          nationality: "German",
-		          Constructors: [
-		              {name: "Red Bull"}
-		          ]
-		      },
-		      {
-		          Driver: {
-		          givenName: 'Fernando',
-		              familyName: 'Alonso'
-		          },
-		          points: 207,
-		          nationality: "Spanish",
-		          Constructors: [
-		              {name: "Ferrari"}
-		          ]
-		      }
-		    ];
-		*/
 	    
 	});
 
@@ -61,5 +37,12 @@ angular.module('F1FeederApp.services', []).
 // initialize our app and register the modules on which it depends
 angular.module('F1FeederApp', [
 	'F1FeederApp.controllers',
-	'F1FeederApp.services'
-]);
+	'F1FeederApp.services',
+	'ngRoute'
+]).
+config(['$routeProvider', function($routeProvider) {
+  $routeProvider.
+	when("/drivers", {templateUrl: "partials/drivers.html", controller: "driversController"}).
+	when("/drivers/:id", {templateUrl: "partials/driver.html", controller: "driverController"}).
+	otherwise({redirectTo: '/drivers'});
+}]);
