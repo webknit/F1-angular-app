@@ -1,19 +1,40 @@
-<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+<!-- The ng-app directive is responsible for bootstrapping your app defining its scope -->
+<!-- The ng-controller directive defines which controller will be in charge of your view -->
 <table>
-<thead>
-  <tr><th colspan="4">Drivers Championship Standings</th></tr>
-</thead>
-<tbody>
-  <tr ng-repeat="driver in driversList | filter: searchFilter">
-    <td>{{$index + 1}}</td>
-    <td>
-      <img src="img/flags/{{driver.Driver.nationality}}.png" />
-      <a href="#/drivers/{{driver.Driver.driverId}}">
-	  	{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
-	  </a>
-	</td>
-    <td>{{driver.Constructors[0].name}}</td>
-    <td>{{driver.points}}</td>
-  </tr>
-</tbody>
+
+	<!-- 
+	ng-model binds our text field to the $scope.nameFilter variable and 
+	makes sure that its value is always up-to-date with the input value 
+	-->
+	<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+
+	<thead>
+		<tr><th colspan="4">Drivers Championship Standings</th></tr>
+	</thead>
+	
+	<tbody>
+	
+		<!-- ng-repeat replicates a line in the table for each driver in driversList -->
+		<tr ng-repeat="driver in driversList | filter: searchFilter">
+			<td>
+				{{$index + 1}}
+			</td>
+			<td>
+				<a href="#/drivers/{{driver.Driver.driverId}}">
+	  				{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+	  			</a>
+			</td>
+			<td>
+				{{driver.nationality}}
+			</td>
+			<td>
+				{{driver.Constructors[0].name}}
+			</td>
+			<td>
+				{{driver.points}}
+			</td>
+		</tr>
+		
+	</tbody>
+	
 </table>
