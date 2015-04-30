@@ -36,10 +36,14 @@ angular.module('F1FeederApp.controllers', []).
 		
 	}).
 	
-	/* Driver controller */
+	// Driver controller, sorts the individual pages
+	// Additional $routeParams passed in here
+	// The $routeParams service allows you to retrieve the current set of route parameters (requires the ngRoute module to be installed)
 	controller('driverController', function($scope, $routeParams, ergastAPIservice) {
 	
+		// Get the ID of the driver
 		$scope.id = $routeParams.id;
+		
 		$scope.races = [];
 		$scope.driver = null;
 	
