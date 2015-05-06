@@ -37,6 +37,14 @@ angular.module('F1FeederApp.services', [])
 		});
 	}
 	
+	// Passes the driverRaces func on
+	ergastAPI.getTeams = function(id) {
+		return $http({
+			method: 'JSONP', 
+			url: 'http://ergast.com/api/f1/2013/constructorStandings.json?callback=JSON_CALLBACK'
+		});
+	}
+	
 	
 	//console.log(ergastAPI);
 	

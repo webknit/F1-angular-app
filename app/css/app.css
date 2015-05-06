@@ -8,3 +8,10 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 td {
 	padding: 1em;
 }
+
+.menu li {
+	display: inline-block;
+	margin-bottom: 2em;
+	margin-right: 1em;
+	overflow: hidden;
+}

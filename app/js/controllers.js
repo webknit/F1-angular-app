@@ -55,4 +55,16 @@ angular.module('F1FeederApp.controllers', []).
 			$scope.races = response.MRData.RaceTable.Races; 
 		});
 		 
+	}).
+	
+	controller('teamsController', function($scope, $routeParams, ergastAPIservice) {
+	
+		// Calls the stored driver function
+		ergastAPIservice.getDrivers().success(function (response) {
+		
+			//Digging into the response to get the relevant data
+			$scope.teamList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+			
+		});
+		 
 	});
