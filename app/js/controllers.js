@@ -22,7 +22,7 @@ angular.module('F1FeederApp.controllers', []).
 			var re = new RegExp($scope.nameFilter, 'i');
 			
 			// test - Tests for a match in a string. Returns true or false
-			return !$scope.nameFilter || re.test(driver.Driver.givenName) || re.test(driver.Driver.familyName);
+			return !$scope.nameFilter || re.test(driver.Driver.givenName) || re.test(driver.Driver.familyName) || re.test(team.Constructor.name);
 			
 		};
 	
