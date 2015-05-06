@@ -22,7 +22,7 @@ angular.module('F1FeederApp.controllers', []).
 			var re = new RegExp($scope.nameFilter, 'i');
 			
 			// test - Tests for a match in a string. Returns true or false
-			return !$scope.nameFilter || re.test(driver.Driver.givenName) || re.test(driver.Driver.familyName) || re.test(team.Constructor.name);
+			return !$scope.nameFilter || re.test(driver.Driver.givenName) || re.test(driver.Driver.familyName);
 			
 		};
 	
@@ -77,9 +77,21 @@ angular.module('F1FeederApp.controllers', []).
 	
 	controller('teamsRacesController', function($scope, $routeParams, ergastAPIservice) {
 	
+		$scope.teamFilter = null;
+	
 		$scope.id = $routeParams.id;
 	
 		$scope.teamRacesList = [];
+		
+		$scope.teamFilter = function (team) {
+			
+			// Returns a regExp, eg "vet" search would return /vet/i
+			var re = new RegExp($scope.teamFilter, 'i');
+			
+			// test - Tests for a match in a string. Returns true or false
+			return !$scope.teamFilter || re.test(team.Constructor.name);
+			
+		};
 	
 		// Calls the stored driver function
 		ergastAPIservice.getTeamsRaces($scope.id).success(function (response) {
