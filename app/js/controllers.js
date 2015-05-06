@@ -57,13 +57,17 @@ angular.module('F1FeederApp.controllers', []).
 		 
 	}).
 	
-	controller('teamsController', function($scope, $routeParams, ergastAPIservice) {
+	controller('teamsController', function($scope, ergastAPIservice) {
+	
+		$scope.teamList = [];
 	
 		// Calls the stored driver function
-		ergastAPIservice.getDrivers().success(function (response) {
+		ergastAPIservice.getTeams().success(function (response) {
 		
 			//Digging into the response to get the relevant data
-			$scope.teamList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+			$scope.teamList = response.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
+			
+			console.log($scope.teamList)
 			
 		});
 		 

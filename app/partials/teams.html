@@ -11,24 +11,19 @@
 	<tbody>
 	
 		<!-- ng-repeat replicates a line in the table for each driver in driversList -->
-		<tr ng-repeat="team in teamList | filter: searchFilter">
+		<!-- http://ergast.com/api/f1/2013/constructors/mclaren/results.json?callback=JSON_CALLBACK -->
+		<tr ng-repeat="team in teamList">
 			<td>
 				{{$index + 1}}
 			</td>
 			<td>
 				<!-- Passing the link -->
-				<a href="#/drivers/{{driver.Driver.driverId}}">
-	  				{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+				<a href="#/constructors/{{team.Constructor.constructorId}}">
+	  				{{team.Constructor.name}}
 	  			</a>
 			</td>
 			<td>
-				{{driver.nationality}}
-			</td>
-			<td>
-				{{driver.Constructors[0].name}}
-			</td>
-			<td>
-				{{driver.points}}
+				{{team.points}}
 			</td>
 		</tr>
 		
