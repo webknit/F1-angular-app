@@ -1,29 +1,17 @@
 # F1FeederApp-Part1
 
+This was one of the first Angular apps I made. I started with this tutorial (http://www.toptal.com/angular-js/a-step-by-step-guide-to-your-first-angularjs-app) and went on to implement some additional features myself.
+
 ## Getting Started
 
-All you need to do is to clone this repository,
+Once checked out you need to 
 
+	npm install
 
-```
-git clone https://github.com/raonibr/f1feeder-part1
-cd f1feeder-part1
-```
+Run the application
 
-Then, install the dependencies:
+	npm start
 
-```
-npm install
-```
+App can be accessed at 
 
-Then, run the Application:
-
-```
-npm start
-```
-
-You can access your app at 
-
-```
-http://localhost:8000/app/
-```
+	http://localhost:8000/app/
