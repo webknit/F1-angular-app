@@ -1,3 +1,5 @@
+<a href="./#/teams">< Back to teams list</a><br><br>
+
 <!-- The ng-app directive is responsible for bootstrapping your app defining its scope -->
 <!-- The ng-controller directive defines which controller will be in charge of your view -->
 <table>
@@ -12,15 +14,21 @@
 	
 		<!-- ng-repeat replicates a line in the table for each driver in driversList -->
 		<!-- http://ergast.com/api/f1/2013/constructors/mclaren/results.json?callback=JSON_CALLBACK -->
-		<tr ng-repeat="team in teamRaceList">
+		<tr ng-repeat="team in teamRacesList">
 			<td>
 				{{$index + 1}}
 			</td>
 			<td>
 				<!-- Passing the link -->
 				<!-- <a href="#/constructors/{{team.Constructor.constructorId}}"> -->
-	  				{{team.season}}
+	  				{{team.raceName}}
 	  			<!-- </a> -->
+			</td>
+			<td>
+				{{team.Results[0].Driver.driverId}} - {{team.Results[0].position}}
+			</td>
+			<td>
+				{{team.Results[1].Driver.driverId}} - {{team.Results[1].position}}
 			</td>
 		</tr>
 		

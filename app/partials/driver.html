@@ -13,7 +13,7 @@
 		<div class="driver-status">
 		
 			Country: {{driver.Driver.nationality}}<br/>
-			Team: {{driver.Constructors[0].name}}<br/>
+			Team: <a href="#/teams/{{driver.Constructors[0].constructorId}}">{{driver.Constructors[0].name}}</a><br/>
 			Birth: {{driver.Driver.dateOfBirth}}<br/>
 			<a href="{{driver.Driver.url}}" target="_blank">Biography</a><br><br>
 			

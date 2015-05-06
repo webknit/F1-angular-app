@@ -10,7 +10,7 @@ config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 	when("/drivers", {templateUrl: "partials/drivers.html", controller: "driversController"}).
 	when("/teams", {templateUrl: "partials/teams.html", controller: "teamsController"}).
-	when("/teams-races", {templateUrl: "partials/teams-races.html", controller: "teamsRacesController"}).
+	when("/teams/:id", {templateUrl: "partials/teams-races.html", controller: "teamsRacesController"}).
 	when("/drivers/:id", {templateUrl: "partials/driver.html", controller: "driverController"}).
 	otherwise({redirectTo: '/drivers'});
 }]);
