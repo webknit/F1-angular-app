@@ -12,18 +12,15 @@
 	
 		<!-- ng-repeat replicates a line in the table for each driver in driversList -->
 		<!-- http://ergast.com/api/f1/2013/constructors/mclaren/results.json?callback=JSON_CALLBACK -->
-		<tr ng-repeat="team in teamList">
+		<tr ng-repeat="team in teamRaceList">
 			<td>
 				{{$index + 1}}
 			</td>
 			<td>
 				<!-- Passing the link -->
-				<a href="#/constructors/{{team.Constructor.constructorId}}">
-	  				{{team.Constructor.name}}
-	  			</a>
-			</td>
-			<td>
-				{{team.points}}
+				<!-- <a href="#/constructors/{{team.Constructor.constructorId}}"> -->
+	  				{{team.season}}
+	  			<!-- </a> -->
 			</td>
 		</tr>
 		
