@@ -26,18 +26,28 @@ td {
   	width: 50%;
 }
 
+th {
+  	padding: 1rem;
+  	font-size: 1.2rem;
+  	letter-spacing: 1px;
+}
+
 input {
+  	box-shadow: 0px 2px 0px 0px #C3C1C1;
+  	border-top: 2px solid #C3C1C1;
+  	border: none;
   	display: block;
+  	font-size: 1.3rem;
   	margin: 0 auto;
-  	padding: 0.5rem;
+  	outline: none;
+  	padding: 0.8rem 0;
   	text-align: center;
-  	width: 90%;
+  	width: 100%;
 }
 
 a {
   	display: block;
   	color: rgb(46, 148, 220);
-  	text-align: left;
   	width: 100%;
 }
 
@@ -45,4 +55,12 @@ h1 {
   	border-bottom: 1px inset #DEDBDB;
   	padding: 1rem;
   	text-align: center;
+}
+
+table {
+	width: 100%;
+}
+
+.ng-binding {
+	text-align: left;
 }
