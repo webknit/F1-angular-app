@@ -1,66 +1,68 @@
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}ol,ul{list-style:none;}caption,th{text-align:left;}q:before,q:after{content:'';}abbr,acronym{border:0;}
 
 body {
-  	color: #144669;
-	font-family: arial, sans-serif;
+    color: #144669;
+  font-family: arial, sans-serif;
 }
 
 .main-body {
-	box-shadow: 0px -1px 1px 2px #DEDBDB;
-	margin: 2em auto 0;
-	max-width: 700px;
+  box-shadow: 0px -1px 1px 2px #DEDBDB;
+  margin: 2em auto 0;
+  max-width: 700px;
 }
 
 td {
-  	box-shadow: 0px 0px 0px 1px #DEDBDB;
-  	padding: 0.5rem 1rem;
-  	text-align: center;
+    box-shadow: 0px 0px 0px 1px #DEDBDB;
+    padding: 0.5rem 1rem;
+    text-align: center;
 }
 
 .menu li {
-  	display: inline-block;
-  	float: left;
-  	margin-bottom: 1em;
-  	padding: 1rem 0;
-  	text-align: center;
-  	width: 50%;
+    display: inline-block;
+    float: left;
+    margin-bottom: 1em;
+    padding: 1rem 0;
+    text-align: center;
+    width: 50%;
 }
 
 th {
-  	padding: 1rem;
-  	font-size: 1.2rem;
-  	letter-spacing: 1px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
 }
 
 input {
-  	box-shadow: 0px 2px 0px 0px #C3C1C1;
-  	border-top: 2px solid #C3C1C1;
-  	border: none;
-  	display: block;
-  	font-size: 1.3rem;
-  	margin: 0 auto;
-  	outline: none;
-  	padding: 0.8rem 0;
-  	text-align: center;
-  	width: 100%;
+    box-shadow: 0px 2px 0px 0px #C3C1C1;
+    border-top: 2px solid #C3C1C1;
+    border-left: none;
+    border-right: none;
+    clear: both;
+    display: block;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    outline: none;
+    padding: 0.8rem 0;
+    text-align: center;
+    width: 100%;
 }
 
 a {
-  	display: block;
-  	color: rgb(46, 148, 220);
-  	width: 100%;
+    display: block;
+    color: rgb(46, 148, 220);
+    width: 100%;
 }
 
 h1 {
-  	border-bottom: 1px inset #DEDBDB;
-  	padding: 1rem;
-  	text-align: center;
+    border-bottom: 1px inset #DEDBDB;
+    padding: 1rem;
+    text-align: center;
 }
 
 table {
-	width: 100%;
+  width: 100%;
 }
 
 .ng-binding {
-	text-align: left;
+  text-align: left;
 }
